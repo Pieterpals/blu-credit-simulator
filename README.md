@@ -95,19 +95,3 @@ This project **automatically builds & pushes a Docker image** on every `git push
 ```sh
 docker run -it your-docker-username/credit-simulator:v1.0
 ```
-
----
-
-## 📜 License
-This project is licensed under **MIT License**.
-
----
-
-## 🙌 Contribution
-Want to improve this project? **Fork & Submit a PR** 🚀.
-
----
-
-### **💡 Questions?**
-If you have any issues, feel free to open an **Issue** on GitHub. 😊
-
