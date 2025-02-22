@@ -22,11 +22,7 @@ public class CreditSimulatorService {
 
         System.out.println("===== Simulasi Kredit =====");
         
-        for (int year = 1; year <= tenor; year++) {
-            if (year == 3) {
-                System.out.println(year);
-            }
-            
+        for (int year = 1; year <= tenor; year++) {           
             // Hitung suku bunga berdasarkan aturan yang diberikan
             double newRate = calculateInterestRate(year); // Konversi ke desimal
             if (year > 1) {

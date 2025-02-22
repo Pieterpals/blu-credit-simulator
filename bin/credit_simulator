@@ -1,0 +1,15 @@
+#!/bin/bash
+
+APP_DIR="$(cd "$(dirname "$0")" && cd .. && pwd)"
+JAR_FILE="$APP_DIR/target/blu-credit-simulator.jar"
+
+if [[ ! -f "$JAR_FILE" ]]; then
+    echo "Error: Application JAR not found! Run 'mvn clean package' first."
+    exit 1
+fi
+
+java -jar "$JAR_FILE" "$@"
+
+echo
+echo "Press any key to exit..."
+read -n 1 -s
