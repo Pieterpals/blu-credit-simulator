@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "request": "launch",
+            "name": "Debug Spring Boot App",
+            "mainClass": "creditsimulator.blu.MainApplication",
+            "projectName": "credit-simulator",
+            "vmArgs": "-Dspring.profiles.active=dev",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        }
+    ]
+}

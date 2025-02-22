@@ -1,0 +1,10 @@
+C:\Users\ricky\OneDrive\Documents\blu\src\main\java\creditsimulator\blu\controller\CreditSimulatorController.java
+C:\Users\ricky\OneDrive\Documents\blu\src\main\java\creditsimulator\blu\factory\VehicleLoanFactory.java
+C:\Users\ricky\OneDrive\Documents\blu\src\main\java\creditsimulator\blu\MainApplication.java
+C:\Users\ricky\OneDrive\Documents\blu\src\main\java\creditsimulator\blu\model\VehicleLoan.java
+C:\Users\ricky\OneDrive\Documents\blu\src\main\java\creditsimulator\blu\service\CreditSimulatorService.java
+C:\Users\ricky\OneDrive\Documents\blu\src\main\java\creditsimulator\blu\strategy\InterestRateStrategy.java
+C:\Users\ricky\OneDrive\Documents\blu\src\main\java\creditsimulator\blu\strategy\MobilInterestRate.java
+C:\Users\ricky\OneDrive\Documents\blu\src\main\java\creditsimulator\blu\strategy\MotorInterestRate.java
+C:\Users\ricky\OneDrive\Documents\blu\src\main\java\creditsimulator\blu\util\InputValidator.java
+C:\Users\ricky\OneDrive\Documents\blu\src\main\java\creditsimulator\blu\util\UserInputHelper.java
