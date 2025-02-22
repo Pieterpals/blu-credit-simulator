@@ -3,7 +3,7 @@ name: Docker Build and Push
 on:
   push:
     branches:
-      - main  # Runs on push to main branch
+      - main  # Trigger on push to main branch
   pull_request:
     branches:
       - main
@@ -15,17 +15,27 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Install JDK 21
+      - name: Fix Package Manager Issues
+        run: |
+          sudo apt-get update --fix-missing
+          sudo apt-get install -f -y
+          sudo apt-get clean
+          sudo rm -rf /var/lib/apt/lists/*
+          sudo dpkg --configure -a
+          sudo apt-get update
+
+      - name: Set up JDK 21
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: Verify Java Version
-        run: java -version
-
-      - name: Verify Maven Version
-        run: mvn -version
+      - name: Install Docker (Fix Conflicts)
+        run: |
+          sudo apt-get remove -y containerd docker.io || true
+          curl -fsSL https://get.docker.com | sudo bash
+          sudo systemctl start docker
+          sudo systemctl enable docker
 
       - name: Build with Maven
         run: mvn clean package -DskipTests
