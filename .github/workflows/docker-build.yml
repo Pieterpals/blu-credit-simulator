@@ -44,7 +44,7 @@ jobs:
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Build Docker Image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/credit-simulator:latest .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/credit-simulator:v1.0 .
 
       - name: Push Docker Image to Docker Hub
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/credit-simulator:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/credit-simulator:v1.0
