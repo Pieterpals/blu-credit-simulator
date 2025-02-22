@@ -1,9 +1,14 @@
-FROM openjdk:8-jdk-alpine
-VOLUME /tmp
-ARG JAVA_OPTS
-ENV JAVA_OPTS=$JAVA_OPTS
-COPY target/blu-0.0.1-SNAPSHOT.jar blu.jar
-EXPOSE 3000
-ENTRYPOINT exec java $JAVA_OPTS -jar blu.jar
-# For Spring-Boot project, use the entrypoint below to reduce Tomcat startup time.
-#ENTRYPOINT exec java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar blu.jar
+# Use OpenJDK as the base image
+FROM openjdk:21-jdk-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy the JAR file into the container
+COPY target/blu-0.0.1-SNAPSHOT.jar credit-simulator.jar
+
+# Expose port 8080
+EXPOSE 8080
+
+# Run the application
+CMD ["java", "-jar", "credit-simulator.jar"]
